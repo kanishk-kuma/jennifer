@@ -8,7 +8,7 @@ import colorsys
 import random
 import time
 
-client = commands.Bot(command_prefix = '+', case_insensitive=True)
+client = commands.Bot(command_prefix = 'j!', case_insensitive=True)
 Client = discord.client
 Clientdiscord = discord.Client()
 
@@ -17,7 +17,7 @@ async def on_ready():
     print('Logged in as '+client.user.name+' (ID:'+client.user.id+') | Connected to '+str(len(client.servers))+' servers | Connected to '+str(len(set(client.get_all_members())))+' users')
     print('--------')
     print('--------')
-    print('CREATED AND HOSTED BY SUBHANKAR DAS')
+    print('CREATED AND HOSTED BY Jennifer')
 
 @client.command(pass_context = True)
 @commands.has_permissions(kick_members=True)     
@@ -26,7 +26,7 @@ async def userinfo(ctx, user: discord.Member):
     embed = discord.Embed(title="{}'s info".format(user.name), description="Here's what I could find.", color = discord.Color((r << 16) + (g << 8) + b))
     embed.add_field(name="Name", value=user.name, inline=True)
     embed.add_field(name="ID", value=user.id, inline=True)
-    embed.add_field(name="Status", value=user.status, inline=True)
+    embed.add_field(name="Status", value=user.status, dnd=True)
     embed.add_field(name="Highest role", value=user.top_role)
     embed.add_field(name="Joined", value=user.joined_at)
     embed.set_thumbnail(url=user.avatar_url)
@@ -44,4 +44,4 @@ async def send(ctx, *, content: str):
                 await client.say("DM can't Sent To : {} :x: ".format(member))
 
 
-client.run("YOUR BOT'S TOKEN HERE")                
+client.run("OTAwNzEzNjQ0ODIyNzg2MDc4.YXFU8w.nh5ikF4oBrbzToueRfN3TsYYUXw")                
